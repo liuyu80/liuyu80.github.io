@@ -28,7 +28,7 @@
 | 本地仓库 | 存储项目完整历史和所有版本，位于.git目录中         | `git push`, `git log`     |
 | 远程仓库 | 托管在服务器上的代码仓库，用于团队协作和备份       | `git pull`, `git clone`   |
 
-![](Git使用指南/image/Pasted%20image%2020250416110054.png)
+![](https://liuyu80.github.io/assets/git四个分区.png)
 
 ### 1.3 配置作者和邮箱
 
