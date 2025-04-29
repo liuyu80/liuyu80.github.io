@@ -2,37 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://liuyu80.github.io/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://liuyu80.github.io/about/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://liuyu80.github.io/note/note/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://liuyu80.github.io/note/freertos/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://liuyu80.github.io/note/freertos/task/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://liuyu80.github.io/note/git%E4%BD%BF%E7%94%A8/%E5%A4%A7%E5%AD%A6%E7%BC%BA%E5%A4%B1%E7%9A%84%E4%B8%80%E8%AF%BE-git%E4%BD%BF%E7%94%A8/</loc>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://liuyu80.github.io/note/python/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://liuyu80.github.io/note/python/log/</loc>
-         <lastmod>2024-06-02</lastmod>
+         <lastmod>2025-04-29</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
