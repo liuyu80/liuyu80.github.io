@@ -67,8 +67,8 @@ repo_name: liuyu.github
 
 
 nav:
-  - 首页: index.md
-  - 关于我: about.md
+  # - 首页: index.md
+  # - 关于我: about.md
   - 笔记:
     - Python:
       - Log: note/python/log.md
