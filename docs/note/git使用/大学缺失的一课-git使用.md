@@ -77,29 +77,63 @@ git config user.email
 | 双星号   | `**/logs`        | 忽略所有目录下的logs文件夹  |
 
 #### 1.4.3 常见忽略项
+下面给出Keil Vision Project的忽略文件模版，更多项目的忽略文件模版请参考 [Github gitignore](https://github.com/github/gitignore)
+
 ```gitignore
-# 系统文件
-.DS_Store
-Thumbs.db
+# git ignore file for Keil ?Vision Project
 
-# 依赖目录
-node_modules/
-vendor/
+# ?Vision 5 and ?Vision 4 Project screen layout file
+*.uvguix.*
+*.uvgui.*
 
-# 构建输出
-dist/
-build/
-*.exe
-*.dll
-*.o
+# Listing Files
+*.i
+*.lst
+*.m51
+*.m66
+*.map
+
+# Object Files
+*.axf
+*.b[0-2][0-9]
+*.b3[0-1]
+*.bak
+*.build_log.htm
+*.crf
 *.d
+*.dep
+*.elf
+*.htm
+*.iex
+*.lnp
+*.o
+*.obj
+*.sbr
+*._ii
+*.__i
+*._ll
 
-# 开发环境文件
-.env
-*.local
+# Firmware Files
+*.bin
+*.h86
+*.hex
 
-# 编辑器目录
-.idea/
+# Build Files
+
+# Debugger Files
+.ini
+
+# JLink Files
+JLinkLog.txt
+
+# Other Files
+.svn/
+.cache/
+*.pdf
+*.xlsx
+tool/
+compile_commands.json
+*.zip
 .vscode/
 ```
 
