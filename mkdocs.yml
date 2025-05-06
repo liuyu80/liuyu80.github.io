@@ -62,7 +62,7 @@ theme:
 edit_uri: edit/main/docs/
 # [top-right corner]
 # [添加 GitHub 仓库]
-repo_url: https://github.com/liuyu80
+repo_url: https://github.com/liuyu80/liuyu80.github.io
 repo_name: liuyu.github
 
 
@@ -70,12 +70,13 @@ nav:
   - 首页: index.md
   - 关于我: about.md
   - 笔记:
-    - note/note.md
-    - Python: 
-      - note/python/index.md
-      - note/python/log.md
-    - FreeRTOS: freertos/index.md
+    - Python:
+      - Log: note/python/log.md
+    - FreeRTOS:
+      - task: note/freertos/task.md
     - git使用: note/git使用/大学缺失的一课-git使用.md
+    - Test-Driven Development: 
+      - Index: "note/Test-Driven Development/index.md"
 
 plugins:
   # [搜索功能]
