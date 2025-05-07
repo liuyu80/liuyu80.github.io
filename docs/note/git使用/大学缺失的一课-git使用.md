@@ -1,3 +1,10 @@
+---
+title: Git使用指南
+summary: Git版本控制系统全面使用教程
+authors: liuyu
+date: 2025-04-28
+---
+
 ## 1. git基础概念
 
 [git 官方文档](https://git-scm.com/docs)
@@ -28,7 +35,7 @@
 | 本地仓库 | 存储项目完整历史和所有版本，位于.git目录中         | `git push`, `git log`     |
 | 远程仓库 | 托管在服务器上的代码仓库，用于团队协作和备份       | `git pull`, `git clone`   |
 
-![](https://liuyu80.github.io/assets/git四个分区.png)
+![git四个分区](../../assets/git四个分区.png)
 
 ### 1.3 配置作者和邮箱
 
@@ -1199,7 +1206,7 @@ int main() {
 
 ### 8.1 Gitflow工作流模型
 
-![](https://liuyu80.github.io/assets/gitflow工作流.png)
+![gitflow工作流](../../assets/gitflow工作流.png)
 
 ```mermaid
 graph TD
