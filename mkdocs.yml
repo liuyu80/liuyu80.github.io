@@ -9,6 +9,8 @@ copyright: Copyright &copy; 2024 liuyu
 # [top]
 theme:
   name: material
+  analytics:
+    gtag: G-LXE4F4VEZ4
   # [切换日间模式和夜间模式]
   # https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle
   palette:
