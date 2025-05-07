@@ -57,6 +57,16 @@
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-LXE4F4VEZ4"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-LXE4F4VEZ4",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-LXE4F4VEZ4",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
 
     
     
@@ -805,345 +815,345 @@
 <p>Python自带的<code>logging</code>我个人不推介使用，不太Pythonic，而开源的<code>Loguru</code>库成为众多工程师及项目中首选，本期将同时对<code>logging</code>及<code>Loguru</code>进行使用对比，希望有所帮助。</p>
 <h3 id="_1">快速示例<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
 <p>在<code>logging</code>中，默认的日志功能输出的信息较为有限</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-</span><span id="__span-0-2">
-</span><span id="__span-0-3"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
-</span><span id="__span-0-4">
-</span><span id="__span-0-5"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-0-6">	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
-</span><span id="__span-0-7">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-0-8">	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
-</span><span id="__span-0-9">	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
-</span><span id="__span-0-10">
-</span><span id="__span-0-11"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-0-12">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <p>输出(<strong>logging默认日志等级为<code>warning</code></strong>，故此处未输出info与debug等级的信息)</p>
-<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1">WARNING:root:This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>warning<span class="w"> </span>message<span class="w"> </span>
-</span><span id="__span-1-2">ERROR:root:This<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>error<span class="w"> </span>message
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a>WARNING:root:This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>warning<span class="w"> </span>message<span class="w"> </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2"></a>ERROR:root:This<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>error<span class="w"> </span>message
 </span></code></pre></div></td></tr></table></div>
 <p>再来看看<code>loguru</code>，默认生成的信息就较为丰富了</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
-</span><span id="__span-2-2"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-2-3">	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
-</span><span id="__span-2-4">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-2-5">	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
-</span><span id="__span-2-6">	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
-</span><span id="__span-2-7">	
-</span><span id="__span-2-8"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-2-9">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span>
+<span class="normal"><a href="#__codelineno-2-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7"></a>	
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="" src="https://pic3.zhimg.com/v2-22b584b36d065f57edec05fe282e958e_b.jpg" /></p>
 <p>提供了执行时间、等级、在哪个函数调用、具体哪一行等信息</p>
 <h3 id="_2">格式化日志<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>格式化日志允许我们向日志添加有用的信息，例如时间戳、日志级别、模块名称、函数名称和行号</p>
 <p>在<code>logging</code>中使用<code>%</code>达到格式化目的</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span>
-<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
-</span><span id="__span-3-2"><span class="c1"># Create a logger and set the logging level </span>
-</span><span id="__span-3-3"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="p">)</span> 
-</span><span id="__span-3-4"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
-</span><span id="__span-3-5"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-3-6">	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
-</span><span id="__span-3-7">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-3-8">	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
-</span><span id="__span-3-9">	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">8</a></span>
+<span class="normal"><a href="#__codelineno-3-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Create a logger and set the logging level </span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="p">)</span> 
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p>输出</p>
-<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="m">2023</span>-10-18<span class="w"> </span><span class="m">15</span>:47:30<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w"> </span><span class="p">|</span><span class="w"> </span>tmp:&lt;module&gt;:186<span class="w"> </span>-<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>info<span class="w"> </span>message<span class="w"> </span>
-</span><span id="__span-4-2"><span class="m">2023</span>-10-18<span class="w"> </span><span class="m">15</span>:47:30<span class="w"> </span><span class="p">|</span><span class="w"> </span>WARNING<span class="w"> </span><span class="p">|</span><span class="w"> </span>tmp:&lt;module&gt;:187<span class="w"> </span>-<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>warning<span class="w"> </span>message<span class="w"> </span>
-</span><span id="__span-4-3"><span class="m">2023</span>-10-18<span class="w"> </span><span class="m">15</span>:47:30<span class="w"> </span><span class="p">|</span><span class="w"> </span>ERROR<span class="w"> </span><span class="p">|</span><span class="w"> </span>tmp:&lt;module&gt;:188<span class="w"> </span>-<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>error<span class="w"> </span>message
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="m">2023</span>-10-18<span class="w"> </span><span class="m">15</span>:47:30<span class="w"> </span><span class="p">|</span><span class="w"> </span>INFO<span class="w"> </span><span class="p">|</span><span class="w"> </span>tmp:&lt;module&gt;:186<span class="w"> </span>-<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>info<span class="w"> </span>message<span class="w"> </span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="m">2023</span>-10-18<span class="w"> </span><span class="m">15</span>:47:30<span class="w"> </span><span class="p">|</span><span class="w"> </span>WARNING<span class="w"> </span><span class="p">|</span><span class="w"> </span>tmp:&lt;module&gt;:187<span class="w"> </span>-<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>a<span class="w"> </span>warning<span class="w"> </span>message<span class="w"> </span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="m">2023</span>-10-18<span class="w"> </span><span class="m">15</span>:47:30<span class="w"> </span><span class="p">|</span><span class="w"> </span>ERROR<span class="w"> </span><span class="p">|</span><span class="w"> </span>tmp:&lt;module&gt;:188<span class="w"> </span>-<span class="w"> </span>This<span class="w"> </span>is<span class="w"> </span>an<span class="w"> </span>error<span class="w"> </span>message
 </span></code></pre></div></td></tr></table></div>
 <p>而<code>loguru</code>使用和f-string相同的<code>{}</code>格式，更方便</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
-</span><span id="__span-5-2"><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;{time:YYYY-MM-DD HH:mm:ss} | </span><span class="si">{level}</span><span class="s2"> | </span><span class="si">{module}</span><span class="s2">:</span><span class="si">{function}</span><span class="s2">:</span><span class="si">{line}</span><span class="s2"> - </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;{time:YYYY-MM-DD HH:mm:ss} | </span><span class="si">{level}</span><span class="s2"> | </span><span class="si">{module}</span><span class="s2">:</span><span class="si">{function}</span><span class="s2">:</span><span class="si">{line}</span><span class="s2"> - </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_3">日志保存<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
-</span><span id="__span-6-2">
-</span><span id="__span-6-3"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">handlers</span><span class="o">=</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;/your/save/path/info.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">),</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">),</span> <span class="p">],</span> <span class="p">)</span> 
-</span><span id="__span-6-4">
-</span><span id="__span-6-5"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-6-6">
-</span><span id="__span-6-7"><span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> <span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2"></a>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="n">handlers</span><span class="o">=</span><span class="p">[</span><span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s2">&quot;/your/save/path/info.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">),</span> <span class="n">logging</span><span class="o">.</span><span class="n">StreamHandler</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">),</span> <span class="p">],</span> <span class="p">)</span> 
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4"></a>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> <span class="n">logging</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6"></a>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> <span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <p>但是在<code>loguru</code>中，只需要使用<code>add</code>方法即可达到目的</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
-</span><span id="__span-7-2">
-</span><span id="__span-7-3"><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="s1">&#39;info.log&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;{time:YYYY-MM-DD HH:mm:ss} | </span><span class="si">{level}</span><span class="s2"> | </span><span class="si">{module}</span><span class="s2">:</span><span class="si">{function}</span><span class="s2">:</span><span class="si">{line}</span><span class="s2"> - </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="p">)</span> 
-</span><span id="__span-7-4">
-</span><span id="__span-7-5"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-7-6">	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
-</span><span id="__span-7-7">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-7-8">	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
-</span><span id="__span-7-9">	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
-</span><span id="__span-7-10">
-</span><span id="__span-7-11"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-7-12">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span> <span class="s1">&#39;info.log&#39;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;{time:YYYY-MM-DD HH:mm:ss} | </span><span class="si">{level}</span><span class="s2"> | </span><span class="si">{module}</span><span class="s2">:</span><span class="si">{function}</span><span class="s2">:</span><span class="si">{line}</span><span class="s2"> - </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="p">)</span> 
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4"></a>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10"></a>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-7-12"><a id="__codelineno-7-12" name="__codelineno-7-12"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_4">日志轮换<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p>日志轮换指通过<strong>定期创建新的日志文件并归档或删除旧的日志来防止日志变得过大</strong></p>
 <p>在<code>logging</code>中，需要一个名为 <code>TimedRotatingFileHandler</code> 的附加类，以下代码示例代表每周切换到一个新的日志文件 ( when=“WO”, interval=1 )，并保留最多 4 周的日志文件 ( backupCount=4 )</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
-</span><span id="__span-8-2"><span class="kn">from</span><span class="w"> </span><span class="nn">logging.handlers</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimedRotatingFileHandler</span> 
-</span><span id="__span-8-3">
-</span><span id="__span-8-4"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
-</span><span id="__span-8-5"><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span> 
-</span><span id="__span-8-6"><span class="c1"># Create a formatter with the desired log format </span>
-</span><span id="__span-8-7">
-</span><span id="__span-8-8"><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span> <span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)-8s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="p">)</span> 
-</span><span id="__span-8-9"><span class="n">file_handler</span> <span class="o">=</span> <span class="n">TimedRotatingFileHandler</span><span class="p">(</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;debug2.log&quot;</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s2">&quot;WO&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">4</span> <span class="p">)</span> 
-</span><span id="__span-8-10"><span class="n">file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span> 
-</span><span id="__span-8-11"><span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span> 
-</span><span id="__span-8-12"><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span> 
-</span><span id="__span-8-13">
-</span><span id="__span-8-14"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-8-15">	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
-</span><span id="__span-8-16">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-8-17">	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
-</span><span id="__span-8-18">	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
-</span><span id="__span-8-19">	
-</span><span id="__span-8-20"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-8-21">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">logging.handlers</span><span class="w"> </span><span class="kn">import</span> <span class="n">TimedRotatingFileHandler</span> 
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3"></a>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span> 
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">)</span> 
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="c1"># Create a formatter with the desired log format </span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">formatter</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span> <span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)-8s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="p">)</span> 
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="n">file_handler</span> <span class="o">=</span> <span class="n">TimedRotatingFileHandler</span><span class="p">(</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;debug2.log&quot;</span><span class="p">,</span> <span class="n">when</span><span class="o">=</span><span class="s2">&quot;WO&quot;</span><span class="p">,</span> <span class="n">interval</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">backupCount</span><span class="o">=</span><span class="mi">4</span> <span class="p">)</span> 
+</span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="n">file_handler</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span> 
+</span><span id="__span-8-11"><a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="n">file_handler</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">formatter</span><span class="p">)</span> 
+</span><span id="__span-8-12"><a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">file_handler</span><span class="p">)</span> 
+</span><span id="__span-8-13"><a id="__codelineno-8-13" name="__codelineno-8-13"></a>
+</span><span id="__span-8-14"><a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-8-15"><a id="__codelineno-8-15" name="__codelineno-8-15"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
+</span><span id="__span-8-16"><a id="__codelineno-8-16" name="__codelineno-8-16"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-8-17"><a id="__codelineno-8-17" name="__codelineno-8-17"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
+</span><span id="__span-8-18"><a id="__codelineno-8-18" name="__codelineno-8-18"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
+</span><span id="__span-8-19"><a id="__codelineno-8-19" name="__codelineno-8-19"></a>	
+</span><span id="__span-8-20"><a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-8-21"><a id="__codelineno-8-21" name="__codelineno-8-21"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <p>在<code>loguru</code>中，可以通过将 <code>rotation</code> 和 <code>retention</code> 参数添加到 <code>add</code> 方法来达到目的，如下示例，同样肥肠方便</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
-</span><span id="__span-9-2">
-</span><span id="__span-9-3"><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;debug.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s2">&quot;1 week&quot;</span><span class="p">,</span> <span class="n">retention</span><span class="o">=</span><span class="s2">&quot;4 weeks&quot;</span><span class="p">)</span> 
-</span><span id="__span-9-4">
-</span><span id="__span-9-5"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-9-6">	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
-</span><span id="__span-9-7">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
-</span><span id="__span-9-8">	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
-</span><span id="__span-9-9">	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
-</span><span id="__span-9-10">
-</span><span id="__span-9-11"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-9-12">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;debug.log&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="s2">&quot;1 week&quot;</span><span class="p">,</span> <span class="n">retention</span><span class="o">=</span><span class="s2">&quot;4 weeks&quot;</span><span class="p">)</span> 
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;This is a debug message&quot;</span><span class="p">)</span> 
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is an info message&quot;</span><span class="p">)</span> 
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;This is a warning message&quot;</span><span class="p">)</span> 
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;This is an error message&quot;</span><span class="p">)</span> 
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10"></a>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_5">日志筛选<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>日志筛选指<strong>根据特定条件有选择的控制应输出与保存哪些日志信息</strong></p>
 <p>在<code>logging</code>中，实现该功能需要创建自定义日志过滤器类</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
-</span><span id="__span-10-2">
-</span><span id="__span-10-3"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;test.log&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)-8s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="p">)</span> 
-</span><span id="__span-10-4">
-</span><span id="__span-10-5"><span class="k">class</span><span class="w"> </span><span class="nc">CustomFilter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">):</span> 
-</span><span id="__span-10-6">
-</span><span id="__span-10-7"><span class="k">def</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
-</span><span id="__span-10-8">	<span class="k">return</span> <span class="s2">&quot;Cai Xukong&quot;</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span> 
-</span><span id="__span-10-9"><span class="c1"># Create a custom logging filter </span>
-</span><span id="__span-10-10"><span class="n">custom_filter</span> <span class="o">=</span> <span class="n">CustomFilter</span><span class="p">()</span> 
-</span><span id="__span-10-11"><span class="c1"># Get the root logger and add the custom filter to it </span>
-</span><span id="__span-10-12"><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
-</span><span id="__span-10-13"><span class="n">logger</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">custom_filter</span><span class="p">)</span>
-</span><span id="__span-10-14">
-</span><span id="__span-10-15"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-10-16">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hello Cai Xukong&quot;</span><span class="p">)</span> 
-</span><span id="__span-10-17">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Bye Cai Xukong&quot;</span><span class="p">)</span> 
-</span><span id="__span-10-18"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-10-19">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">filename</span><span class="o">=</span><span class="s2">&quot;test.log&quot;</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)-8s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">,</span> <span class="p">)</span> 
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4"></a>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="k">class</span><span class="w"> </span><span class="nc">CustomFilter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">):</span> 
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6"></a>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+</span><span id="__span-10-8"><a id="__codelineno-10-8" name="__codelineno-10-8"></a>	<span class="k">return</span> <span class="s2">&quot;Cai Xukong&quot;</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span> 
+</span><span id="__span-10-9"><a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="c1"># Create a custom logging filter </span>
+</span><span id="__span-10-10"><a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="n">custom_filter</span> <span class="o">=</span> <span class="n">CustomFilter</span><span class="p">()</span> 
+</span><span id="__span-10-11"><a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="c1"># Get the root logger and add the custom filter to it </span>
+</span><span id="__span-10-12"><a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span>
+</span><span id="__span-10-13"><a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="n">logger</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">custom_filter</span><span class="p">)</span>
+</span><span id="__span-10-14"><a id="__codelineno-10-14" name="__codelineno-10-14"></a>
+</span><span id="__span-10-15"><a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-10-16"><a id="__codelineno-10-16" name="__codelineno-10-16"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hello Cai Xukong&quot;</span><span class="p">)</span> 
+</span><span id="__span-10-17"><a id="__codelineno-10-17" name="__codelineno-10-17"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Bye Cai Xukong&quot;</span><span class="p">)</span> 
+</span><span id="__span-10-18"><a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-10-19"><a id="__codelineno-10-19" name="__codelineno-10-19"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <p>在<code>loguru</code>中，可以简单地使用<code>lambda</code>函数来过滤日志</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span>
-<span class="normal">7</span>
-<span class="normal">8</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
-</span><span id="__span-11-2">
-</span><span id="__span-11-3"><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;test.log&quot;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;Cai Xukong&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">],</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
-</span><span id="__span-11-4"><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
-</span><span id="__span-11-5">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hello Cai Xukong&quot;</span><span class="p">)</span> 
-</span><span id="__span-11-6">	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Bye Cai Xukong&quot;</span><span class="p">)</span> 
-</span><span id="__span-11-7"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-11-8">	<span class="n">main</span><span class="p">()</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span>
+<span class="normal"><a href="#__codelineno-11-5">5</a></span>
+<span class="normal"><a href="#__codelineno-11-6">6</a></span>
+<span class="normal"><a href="#__codelineno-11-7">7</a></span>
+<span class="normal"><a href="#__codelineno-11-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">logger</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="s2">&quot;test.log&quot;</span><span class="p">,</span> <span class="nb">filter</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;Cai Xukong&quot;</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[</span><span class="s2">&quot;message&quot;</span><span class="p">],</span> <span class="n">level</span><span class="o">=</span><span class="s2">&quot;INFO&quot;</span><span class="p">)</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span> 
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hello Cai Xukong&quot;</span><span class="p">)</span> 
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6"></a>	<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Bye Cai Xukong&quot;</span><span class="p">)</span> 
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8"></a>	<span class="n">main</span><span class="p">()</span>
 </span></code></pre></div></td></tr></table></div>
 <h3 id="_6">捕获异常<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h3>
 <p>在<code>logging</code>中捕获异常较为不便且难以调试，如</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
-</span><span id="__span-12-2">
-</span><span id="__span-12-3"><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="p">)</span> 
-</span><span id="__span-12-4">
-</span><span id="__span-12-5"><span class="k">def</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
-</span><span id="__span-12-6">	<span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
-</span><span id="__span-12-7">	
-</span><span id="__span-12-8"><span class="k">def</span><span class="w"> </span><span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> 
-</span><span id="__span-12-9">	<span class="k">try</span><span class="p">:</span> 
-</span><span id="__span-12-10">		<span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
-</span><span id="__span-12-11">	<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span> 
-</span><span id="__span-12-12">		<span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">)</span> 
-</span><span id="__span-12-13">
-</span><span id="__span-12-14"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-12-15">	<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span> 
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2"></a>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span> <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">%(asctime)s</span><span class="s2"> | </span><span class="si">%(levelname)s</span><span class="s2"> | </span><span class="si">%(module)s</span><span class="s2">:</span><span class="si">%(funcName)s</span><span class="s2">:</span><span class="si">%(lineno)d</span><span class="s2"> - </span><span class="si">%(message)s</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">datefmt</span><span class="o">=</span><span class="s2">&quot;%Y-%m-</span><span class="si">%d</span><span class="s2"> %H:%M:%S&quot;</span><span class="p">,</span> <span class="p">)</span> 
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4"></a>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6"></a>	<span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7"></a>	
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="k">def</span><span class="w"> </span><span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> 
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9"></a>	<span class="k">try</span><span class="p">:</span> 
+</span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10"></a>		<span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
+</span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11"></a>	<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span> 
+</span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12"></a>		<span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">)</span> 
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13"></a>
+</span><span id="__span-12-14"><a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-12-15"><a id="__codelineno-12-15" name="__codelineno-12-15"></a>	<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span> <span class="n">File</span> <span class="s2">&quot;logging_example.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">16</span><span class="p">,</span> <span class="ow">in</span> <span class="n">nested</span> <span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="n">File</span> <span class="s2">&quot;logging_example.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">11</span><span class="p">,</span> <span class="ow">in</span> <span class="n">division</span> <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span> <span class="n">File</span> <span class="s2">&quot;logging_example.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">16</span><span class="p">,</span> <span class="ow">in</span> <span class="n">nested</span> <span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> <span class="n">File</span> <span class="s2">&quot;logging_example.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">11</span><span class="p">,</span> <span class="ow">in</span> <span class="n">division</span> <span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span> <span class="n">division</span> <span class="n">by</span> <span class="n">zero</span>
 </span></code></pre></div></td></tr></table></div>
 <p>上面输出的信息未提供触发异常的<code>c</code>值信息，而在<code>loguru</code>中，通过显示包含变量值的完整堆栈跟踪来方便用户识别</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
-</span><span id="__span-14-2">
-</span><span id="__span-14-3"><span class="k">def</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
-</span><span id="__span-14-4">	<span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
-</span><span id="__span-14-5">
-</span><span id="__span-14-6"><span class="k">def</span><span class="w"> </span><span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> 
-</span><span id="__span-14-7">	<span class="k">try</span><span class="p">:</span> 
-</span><span id="__span-14-8">		<span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
-</span><span id="__span-14-9">	<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-</span><span id="__span-14-10">		<span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">)</span> 
-</span><span id="__span-14-11">		
-</span><span id="__span-14-12"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-14-13">	<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4"></a>	<span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5"></a>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">def</span><span class="w"> </span><span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> 
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7"></a>	<span class="k">try</span><span class="p">:</span> 
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8"></a>		<span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9"></a>	<span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10"></a>		<span class="n">logger</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;ZeroDivisionError&quot;</span><span class="p">)</span> 
+</span><span id="__span-14-11"><a id="__codelineno-14-11" name="__codelineno-14-11"></a>		
+</span><span id="__span-14-12"><a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-14-13"><a id="__codelineno-14-13" name="__codelineno-14-13"></a>	<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="" src="https://pic3.zhimg.com/v2-4bc64d022e2f990f8319b719d981326e_b.jpg" /></p>
 <p>值得一提的是，<code>loguru</code>中的<code>catch</code>装饰器允许用户捕获函数内任何错误，且还会标识发生错误的线程</p>
-<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
-</span><span id="__span-15-2">
-</span><span id="__span-15-3"><span class="k">def</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
-</span><span id="__span-15-4">	<span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
-</span><span id="__span-15-5">
-</span><span id="__span-15-6"><span class="nd">@logger</span><span class="o">.</span><span class="n">catch</span> 
-</span><span id="__span-15-7"><span class="k">def</span><span class="w"> </span><span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> 
-</span><span id="__span-15-8">	<span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
-</span><span id="__span-15-9">	
-</span><span id="__span-15-10"><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
-</span><span id="__span-15-11">	<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-15-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-15-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-15-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-15-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-15-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-15-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-15-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-15-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-15-10">10</a></span>
+<span class="normal"><a href="#__codelineno-15-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">loguru</span><span class="w"> </span><span class="kn">import</span> <span class="n">logger</span> 
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">division</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span> 
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4"></a>	<span class="k">return</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span> 
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5"></a>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="nd">@logger</span><span class="o">.</span><span class="n">catch</span> 
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="k">def</span><span class="w"> </span><span class="nf">nested</span><span class="p">(</span><span class="n">c</span><span class="p">):</span> 
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8"></a>	<span class="n">division</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9"></a>	
+</span><span id="__span-15-10"><a id="__codelineno-15-10" name="__codelineno-15-10"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span> 
+</span><span id="__span-15-11"><a id="__codelineno-15-11" name="__codelineno-15-11"></a>	<span class="n">nested</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <p><img alt="" src="https://pic3.zhimg.com/v2-4b96b73c19ea055716e73e751b8a7cb6_b.jpg" /></p>
 <p>OK，作为普通玩家以上功能足以满足日常日志需求，通过对比<code>logging</code>与<code>loguru</code>应该让大家有了直观感受，哦对了，<code>loguru</code>如何安装？</p>
-<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1">pip<span class="w"> </span>install<span class="w"> </span>loguru
+<div class="language-bash highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1"></a>pip<span class="w"> </span>install<span class="w"> </span>loguru
 </span></code></pre></div></td></tr></table></div>
 
 
@@ -1153,6 +1163,8 @@
 
 
 
+
+  
 
 
 
@@ -1207,6 +1219,8 @@
     
     
       <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
       
         <script src="../../../mkdocs/javascripts/katex.js"></script>
       
